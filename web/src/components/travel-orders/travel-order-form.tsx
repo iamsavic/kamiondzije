@@ -16,7 +16,7 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Plus, Trash2 } from "lucide-react";
 
-type Vehicle = { id: true; registrationNumber: string; make: string; model: string };
+type Vehicle = { id: string; registrationNumber: string; make: string; model: string };
 type Driver = { id: string; firstName: string; lastName: string };
 
 type Expense = { description: string; amount: string; currency: string };
