@@ -335,7 +335,7 @@ export function TravelOrderForm({
                   />
                   <Select
                     value={ex.currency}
-                    onValueChange={(v) => updateExpense(i, "currency", v)}
+                    onValueChange={(v) => updateExpense(i, "currency", v ?? "")}
                   >
                     <SelectTrigger className="w-24">
                       <SelectValue />
