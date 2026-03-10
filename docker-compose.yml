@@ -1,0 +1,20 @@
+# Lokalna PostgreSQL baza za Fleet Status Manager
+# Pokretanje: docker compose up -d
+# Zaustavljanje: docker compose down
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: fleet-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: fleet
+      POSTGRES_PASSWORD: fleet
+      POSTGRES_DB: fleet
+    ports:
+      - "5432:5432"
+    volumes:
+      - fleet_pgdata:/var/lib/postgresql/data
+
+volumes:
+  fleet_pgdata:
