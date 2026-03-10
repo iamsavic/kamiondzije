@@ -91,7 +91,7 @@ export default async function ServicesPage({
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <h1 className="text-2xl font-semibold">Servisi i održavanje</h1>
           <p className="text-muted-foreground">
@@ -119,7 +119,7 @@ export default async function ServicesPage({
             name="search"
             defaultValue={search}
             placeholder="Pretraži opis, radionicu..."
-            className="h-9 w-60 rounded-md border border-input bg-background px-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="h-9 w-full max-w-xs rounded-md border border-input bg-background px-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           />
         </form>
 
@@ -162,6 +162,7 @@ export default async function ServicesPage({
               </p>
             </div>
           ) : (
+            <div className="overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow>
@@ -236,6 +237,7 @@ export default async function ServicesPage({
                 ))}
               </TableBody>
             </Table>
+            </div>
           )}
         </CardContent>
       </Card>

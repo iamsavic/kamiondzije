@@ -115,7 +115,7 @@ export default async function AlertsPage({
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <h1 className="text-2xl font-semibold">Alarmi</h1>
           <p className="text-muted-foreground">
@@ -176,7 +176,7 @@ export default async function AlertsPage({
         </div>
 
         {/* Level filter */}
-        <div className="flex gap-1">
+        <div className="flex flex-wrap gap-1">
           {levelFilters.map((f) => (
             <Link key={f.value} href={buildHref({ level: f.value })}>
               <Badge
@@ -225,6 +225,7 @@ export default async function AlertsPage({
               )}
             </div>
           ) : (
+            <div className="overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow>
@@ -302,6 +303,7 @@ export default async function AlertsPage({
                 ))}
               </TableBody>
             </Table>
+            </div>
           )}
         </CardContent>
       </Card>

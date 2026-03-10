@@ -93,7 +93,7 @@ export default async function TravelOrdersPage({
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <h1 className="text-2xl font-semibold">Putni nalozi</h1>
           <p className="text-muted-foreground">
@@ -138,7 +138,7 @@ export default async function TravelOrdersPage({
             name="search"
             defaultValue={search}
             placeholder="Pretraži nalog, relaciju, vozača..."
-            className="h-9 w-72 rounded-md border border-input bg-background px-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="h-9 w-full max-w-xs rounded-md border border-input bg-background px-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           />
         </form>
 
@@ -171,6 +171,7 @@ export default async function TravelOrdersPage({
               </p>
             </div>
           ) : (
+            <div className="overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow>
@@ -251,6 +252,7 @@ export default async function TravelOrdersPage({
                 })}
               </TableBody>
             </Table>
+            </div>
           )}
         </CardContent>
       </Card>

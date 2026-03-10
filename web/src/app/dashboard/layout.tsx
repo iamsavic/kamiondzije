@@ -4,6 +4,7 @@ import Link from "next/link";
 import { signOut } from "@/auth";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { MobileNav } from "@/components/mobile-nav";
 import {
   LayoutDashboard,
   Truck,
@@ -36,8 +37,9 @@ export default async function DashboardLayout({
   if (!session?.user) redirect("/login");
 
   return (
-    <div className="flex min-h-screen">
-      <aside className="flex w-56 flex-col border-r border-sidebar-border bg-sidebar">
+    <div className="flex min-h-screen flex-col md:flex-row">
+      <MobileNav />
+      <aside className="hidden md:flex w-56 flex-col border-r border-sidebar-border bg-sidebar">
         <div className="flex h-14 items-center gap-2 px-4">
           <span className="font-semibold text-sidebar-foreground">
             Fleet Status
@@ -85,7 +87,7 @@ export default async function DashboardLayout({
           </form>
         </div>
       </aside>
-      <main className="flex-1 overflow-auto bg-background p-6">
+      <main className="flex-1 overflow-auto bg-background p-3 md:p-6">
         {children}
       </main>
     </div>

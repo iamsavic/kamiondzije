@@ -126,7 +126,7 @@ export function EmailRecipientsForm({ initialEmails }: { initialEmails: string[]
         )}
       </div>
 
-      <div className="flex items-center justify-between rounded-lg border bg-muted/30 p-4">
+      <div className="flex flex-wrap items-center justify-between gap-4 rounded-lg border bg-muted/30 p-4">
         <p className="text-sm text-muted-foreground">
           {emails.length === 0
             ? "Bez podešenih adresa — obaveštenja idu admin korisnicima"

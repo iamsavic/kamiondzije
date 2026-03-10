@@ -68,7 +68,7 @@ export default async function VehiclesPage({
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <h1 className="text-2xl font-semibold">Vozila</h1>
           <p className="text-muted-foreground">
@@ -121,6 +121,7 @@ export default async function VehiclesPage({
               </p>
             </div>
           ) : (
+            <div className="overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow>
@@ -199,6 +200,7 @@ export default async function VehiclesPage({
                 })}
               </TableBody>
             </Table>
+            </div>
           )}
         </CardContent>
       </Card>

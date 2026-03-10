@@ -72,7 +72,7 @@ export default async function FuelPage({
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <h1 className="text-2xl font-semibold">Gorivo i kilometraža</h1>
           <p className="text-muted-foreground">
@@ -132,14 +132,14 @@ export default async function FuelPage({
       )}
 
       {/* Search */}
-      <div className="flex items-center gap-3">
-        <form method="GET" action="/dashboard/fuel" className="flex">
+      <div className="flex flex-wrap items-center gap-3">
+        <form method="GET" action="/dashboard/fuel" className="flex flex-1 min-w-0">
           {vehicleId && <input type="hidden" name="vehicle" value={vehicleId} />}
           <input
             name="search"
             defaultValue={search}
             placeholder="Pretraži vozilo, lokaciju..."
-            className="h-9 w-64 rounded-md border border-input bg-background px-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="h-9 w-full max-w-xs rounded-md border border-input bg-background px-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           />
         </form>
         {vehicleId && (
@@ -161,6 +161,7 @@ export default async function FuelPage({
               </p>
             </div>
           ) : (
+            <div className="overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow>
@@ -245,6 +246,7 @@ export default async function FuelPage({
                 })}
               </TableBody>
             </Table>
+            </div>
           )}
         </CardContent>
       </Card>

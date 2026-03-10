@@ -317,44 +317,46 @@ export function TravelOrderForm({
           ) : (
             <>
               {form.expenses.map((ex, i) => (
-                <div key={i} className="flex items-center gap-3">
+                <div key={i} className="flex flex-col gap-2 sm:flex-row sm:items-center">
                   <Input
                     value={ex.description}
                     onChange={(e) => updateExpense(i, "description", e.target.value)}
                     placeholder="Opis troška (putarina, parking...)"
-                    className="flex-1"
+                    className="sm:flex-1"
                   />
-                  <Input
-                    type="number"
-                    value={ex.amount}
-                    onChange={(e) => updateExpense(i, "amount", e.target.value)}
-                    placeholder="Iznos"
-                    className="w-32"
-                    min="0"
-                    step="0.01"
-                  />
-                  <Select
-                    value={ex.currency}
-                    onValueChange={(v) => updateExpense(i, "currency", v ?? "")}
-                  >
-                    <SelectTrigger className="w-24">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="RSD">RSD</SelectItem>
-                      <SelectItem value="EUR">EUR</SelectItem>
-                      <SelectItem value="USD">USD</SelectItem>
-                    </SelectContent>
-                  </Select>
-                  <Button
-                    type="button"
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => removeExpense(i)}
-                    className="text-destructive hover:text-destructive shrink-0"
-                  >
-                    <Trash2 className="size-4" />
-                  </Button>
+                  <div className="flex items-center gap-2">
+                    <Input
+                      type="number"
+                      value={ex.amount}
+                      onChange={(e) => updateExpense(i, "amount", e.target.value)}
+                      placeholder="Iznos"
+                      className="w-28"
+                      min="0"
+                      step="0.01"
+                    />
+                    <Select
+                      value={ex.currency}
+                      onValueChange={(v) => updateExpense(i, "currency", v ?? "")}
+                    >
+                      <SelectTrigger className="w-24">
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="RSD">RSD</SelectItem>
+                        <SelectItem value="EUR">EUR</SelectItem>
+                        <SelectItem value="USD">USD</SelectItem>
+                      </SelectContent>
+                    </Select>
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => removeExpense(i)}
+                      className="text-destructive hover:text-destructive shrink-0"
+                    >
+                      <Trash2 className="size-4" />
+                    </Button>
+                  </div>
                 </div>
               ))}
               {totalExpenses > 0 && (

@@ -169,7 +169,7 @@ export default async function DriverDetailPage({
                 <span>{driver.address}</span>
               </div>
             )}
-            <dl className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2">
+            <dl className="mt-3 grid grid-cols-[auto_1fr] gap-x-4 gap-y-2">
               <dt className="text-muted-foreground">JMBG / ID</dt>
               <dd className="font-mono text-xs">{driver.externalId ?? "—"}</dd>
               <dt className="text-muted-foreground">Datum zaposlenja</dt>
@@ -188,7 +188,7 @@ export default async function DriverDetailPage({
         <Card>
           <CardHeader><CardTitle>Dokumenta</CardTitle></CardHeader>
           <CardContent>
-            <dl className="grid grid-cols-2 gap-x-4 gap-y-3 text-sm">
+            <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-3 text-sm">
               <dt className="text-muted-foreground">Br. vozačke</dt>
               <dd className="font-mono text-xs">{driver.licenseNumber ?? "—"}</dd>
               <dt className="text-muted-foreground">Kategorije</dt>
@@ -241,6 +241,7 @@ export default async function DriverDetailPage({
             <CardTitle>Istorija zaduženja</CardTitle>
           </CardHeader>
           <CardContent className="p-0">
+            <div className="overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow>
@@ -285,6 +286,7 @@ export default async function DriverDetailPage({
                 ))}
               </TableBody>
             </Table>
+            </div>
           </CardContent>
         </Card>
       )}
@@ -298,6 +300,7 @@ export default async function DriverDetailPage({
             </CardTitle>
           </CardHeader>
           <CardContent className="p-0">
+            <div className="overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow>
@@ -339,6 +342,7 @@ export default async function DriverDetailPage({
                 ))}
               </TableBody>
             </Table>
+            </div>
           </CardContent>
         </Card>
       )}

@@ -119,7 +119,7 @@ export function NotificationRulesForm({ rules }: { rules: AlertRule[] }) {
               </CardHeader>
 
               <CardContent>
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                   {/* Warning threshold */}
                   <div className="space-y-2">
                     <Label className="flex items-center gap-1.5 text-sm font-medium">
@@ -214,14 +214,14 @@ export function NotificationRulesForm({ rules }: { rules: AlertRule[] }) {
         })}
       </div>
 
-      <div className="flex items-center justify-between rounded-lg border bg-muted/30 p-4">
+      <div className="flex flex-wrap items-center justify-between gap-4 rounded-lg border bg-muted/30 p-4">
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
           <Clock className="size-4" />
           <span>
             Promene stupaju na snagu pri sledećem generisanju alarma
           </span>
         </div>
-        <Button onClick={handleSave} disabled={isPending} className="gap-2">
+        <Button onClick={handleSave} disabled={isPending} className="gap-2 shrink-0">
           <Save className="size-4" />
           {isPending ? "Čuvanje..." : "Sačuvaj podešavanja"}
         </Button>

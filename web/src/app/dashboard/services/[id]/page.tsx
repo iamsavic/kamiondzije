@@ -114,7 +114,7 @@ export default async function ServiceDetailPage({
             <CardTitle>Podaci o servisu</CardTitle>
           </CardHeader>
           <CardContent>
-            <dl className="grid grid-cols-2 gap-x-4 gap-y-3 text-sm">
+            <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-3 text-sm">
               <dt className="text-muted-foreground">Tip</dt>
               <dd>
                 <Badge variant={TYPE_VARIANT[record.type] ?? "outline"} className="text-xs">

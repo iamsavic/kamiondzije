@@ -147,7 +147,7 @@ export default async function VehicleDetailPage({
         <Card>
           <CardHeader><CardTitle>Osnovni podaci</CardTitle></CardHeader>
           <CardContent>
-            <dl className="grid grid-cols-2 gap-x-4 gap-y-3 text-sm">
+            <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-3 text-sm">
               <dt className="text-muted-foreground">Marka / Model</dt>
               <dd className="font-medium">{vehicle.make} {vehicle.model}</dd>
 
@@ -197,7 +197,7 @@ export default async function VehicleDetailPage({
         <Card>
           <CardHeader><CardTitle>Nabavka i vrednost</CardTitle></CardHeader>
           <CardContent>
-            <dl className="grid grid-cols-2 gap-x-4 gap-y-3 text-sm">
+            <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-3 text-sm">
               <dt className="text-muted-foreground">Način nabavke</dt>
               <dd>{vehicle.acquisitionType === "leasing" ? "Lizing" : "Kupovina"}</dd>
 
@@ -246,6 +246,7 @@ export default async function VehicleDetailPage({
               Nema unesenih dokumenata.
             </p>
           ) : (
+            <div className="overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow>
@@ -274,6 +275,7 @@ export default async function VehicleDetailPage({
                 ))}
               </TableBody>
             </Table>
+            </div>
           )}
         </CardContent>
       </Card>
@@ -360,6 +362,7 @@ export default async function VehicleDetailPage({
             </CardTitle>
           </CardHeader>
           <CardContent className="p-0">
+            <div className="overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow>
@@ -392,6 +395,7 @@ export default async function VehicleDetailPage({
                 ))}
               </TableBody>
             </Table>
+            </div>
           </CardContent>
         </Card>
       )}

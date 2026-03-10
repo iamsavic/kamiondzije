@@ -94,7 +94,7 @@ export default async function FuelDetailPage({
         <Card>
           <CardHeader><CardTitle>Podaci o sipanju</CardTitle></CardHeader>
           <CardContent>
-            <dl className="grid grid-cols-2 gap-x-4 gap-y-3 text-sm">
+            <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-3 text-sm">
               <dt className="text-muted-foreground">Datum</dt>
               <dd className="font-medium">{fmtDate(entry.date)}</dd>
 
